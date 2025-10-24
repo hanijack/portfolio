@@ -1,0 +1,34 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    .btn{
+        @apply justify-start ;
+    }
+    .cont{
+        @apply flex flex-col border-[1px] rounded-sm border-slate-300 p-4
+    }
+    .cont .proj{
+        @apply flex flex-row  shadow-sm items-center
+    }
+    .cont .proj:nth-child(odd){
+        direction: ltr;
+    }
+    .cont .proj:nth-child(even){
+        direction: rtl;
+        
+    }
+    .active{
+        @apply border-b-[2px] border-[#3e93d5] border-opacity-50 pb-1 
+    }
+    .nav-link{
+        @apply hover:text-[#0865b6] dark:hover:text-[#3e93d5]
+    }
+    .submit-but{
+        @apply px-4 py-2 bg-slate-300 hover:bg-slate-400 rounded-md hover:text-blue-800 text-[#0865b6] dark:bg-slate-900  dark:hover:bg-slate-800 dark:hover:text-[#3e93d5] dark:text-[#0865b6] transition disabled:cursor-not-allowed
+    }
+}
