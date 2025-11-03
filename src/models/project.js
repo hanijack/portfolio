@@ -6,9 +6,9 @@ const ProjectSchema = new Schema(
     {
         id:String,
         name:String,
-        imgUrl:String,
         techn:Array,
         links:Array,
+        description: String, 
     }
 );
 

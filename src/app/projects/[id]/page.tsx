@@ -26,16 +26,24 @@ async function Proj({ params }: { params: Promise<Params> }) {
 
   return (
     <>
-      <h1 className="text-lg text-center dark:text-white">{project.name}</h1>
-      <div className="flex flex-col sm:flex-row items-center text-center sm:items-start sm:text-left py-4 my-4 gap-4">
-        <Image
-          src={project.imgUrl}
-          width={300}
-          height={300}
-          alt={project.name}
-          className="rounded-md self-center border-[1px] w-[300px] h-[300px] border-[#3e93d5] border-opacity-50 shadow-xl dark:shadow-white dark:shadow-sm"
-        ></Image>
-        <div className="flex flex-col flex-grow justify-between gap-4 md:w-1/2">
+      <h1 className="text-2xl text-gray-700 text-center dark:text-white">{project.name}</h1>
+      <div className="flex flex-col sm:flex-row items-center text-center justify-center sm:items-start sm:text-left py-4 my-4 gap-4 sm:gap-8 md:mt-6">
+        <div className="flex flex-col flex-grow justify-between gap-4 md:w-2/3">
+        <p className="leading-8"> {project.description}</p>
+        <ul className="flex justify-evenly mt-auto gap-2">
+            {project?.links?.[0] && (
+              <li className="submit-but">
+                <Link href={project.links[0]}>Website</Link>
+              </li>
+            )}
+            {project?.links?.[1] && (
+              <li className="submit-but">
+                <Link href={project.links[1]}>Github</Link>
+              </li>
+            )}
+          </ul>
+        </div>
+        <div className="flex flex-col flex-grow justify-between gap-4 md:w-1/3">
           <h2 className="text-lg font-semibold mb-4 text-indigo-600 dark:text-indigo-400">
             Tech Stack
           </h2>
@@ -49,18 +57,7 @@ async function Proj({ params }: { params: Promise<Params> }) {
               </span>
             ))}
           </div>
-          <ul className="flex justify-evenly mt-auto">
-            {project?.links?.[0] && (
-              <li className="submit-but">
-                <Link href={project.links[0]}>Website</Link>
-              </li>
-            )}
-            {project?.links?.[1] && (
-              <li className="submit-but">
-                <Link href={project.links[1]}>Github</Link>
-              </li>
-            )}
-          </ul>
+          
         </div>
       </div>
     </>

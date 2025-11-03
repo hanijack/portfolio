@@ -9,7 +9,6 @@ export type ProjectDTO = {
   description?: string;
   techn?: string[];
   links?: string[];
-  imgUrl: string;
 };
 export type ProjectSummaryDTO = {
   _id: string;
@@ -24,13 +23,13 @@ export async function getAllProjectsFromDb(): Promise<ProjectSummaryDTO[]> {
     .select("_id name techn links")
     .lean()
     .exec();
-  return projects as ProjectSummaryDTO[];
+  return projects as unknown as ProjectSummaryDTO[];
 
 }
 
 export async function getProjectFromDb(id: string): Promise<ProjectDTO | null> {
   if (!Types.ObjectId.isValid(id)) return null;
   await connectMong();
-  return Project.findById(id).select("_id name description techn links imgUrl").lean<ProjectDTO>()
+  return Project.findById(id).select("_id name description techn links ").lean<ProjectDTO>()
 .exec();
 }

@@ -25,7 +25,7 @@ export default function Home() {
       Hello, <span className="text-[#3e93d5]">I am</span>
     </h3>
     <h1 className="font-bold mb-4 text-2xl sm:text-3xl dark:text-white">
-      Mohamad Darklt
+      Hani Darklt
     </h1>
     <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
       Welcome to my digital corner—I&apos;m a web developer and React specialist with a passion

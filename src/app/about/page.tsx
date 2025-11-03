@@ -14,7 +14,7 @@ const About = () => {
         </h1>
         <p className="text-lg sm:text-xl text-gray-500  leading-relaxed mb-10">
           I&apos;m
-          <span className="font-semibold  text-[#3e93d5] px-1">Mohamad Darklt</span>,
+          <span className="font-semibold  text-[#3e93d5] px-1">HANI Darklt</span>,
           a full-stack developer with a strong focus on the MERN stack and a
           love for solving real-world problems with clean code and intuitive
           design. I enjoy sculpting secure backend logic, building seamless
