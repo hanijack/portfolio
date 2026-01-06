@@ -1,4 +1,3 @@
-// services/projectService.ts
 import connectMong from "@/libs/mongodb";
 import Project from "@/models/project";
 import { Types } from "mongoose";

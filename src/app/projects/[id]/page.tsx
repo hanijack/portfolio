@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getProjectFromDb } from "@/services/projectService";
-import { Metadata } from "next";
-export const dynamic = "force-dynamic";
+
+export const revalidate = 86400;
 
 type Params = { id: string };
 
@@ -61,6 +60,6 @@ async function Proj({ params }: { params: Promise<Params> }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 export default Proj;
